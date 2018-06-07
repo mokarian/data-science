@@ -8,8 +8,8 @@ from azure.cognitiveservices.vision.customvision.training import training_api
 from azure.cognitiveservices.vision.customvision.training.models import ImageUrlCreateEntry
 
 # Replace with a valid key
-training_key = "85a3082e0964492b967f5dc3398f7da3"
-prediction_key = "929f436108214e83b3fa22d2de9e63bd"
+training_key = "YOUR_TRAINING_KEY"
+prediction_key = "YOR_PREDICTION_KEY"
 
 trainer = training_api.TrainingApi(training_key)
 
