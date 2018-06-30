@@ -9,9 +9,7 @@ from keras.models import Sequential
 
 model = Sequential()
 
-
 # In[16]:
-
 
 import os
 from os.path import basename
@@ -49,9 +47,7 @@ X_train.shape
 
 X_test.shape
 
-
 # In[12]:
-
 
 import keras
 from keras.datasets import mnist
@@ -67,7 +63,6 @@ epochs = 30 # 12
 # input image dimensions
 img_rows, img_cols = 128, 128 # 128, 128
 input_shape = X_test[0].shape # (img_rows, img_cols, 1)
-
 
 x_train = X_train.astype('float32')
 x_test = X_test.astype('float32')
@@ -119,4 +114,3 @@ loss = score[0]
 accuracy = score[1] * 100.0
 print('Test loss: %2.1f' % loss)
 print('Test accuracy:  %2.1f%%' % accuracy)
-
