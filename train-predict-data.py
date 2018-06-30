@@ -3,7 +3,6 @@
 
 # In[5]:
 
-
 import os
 from os.path import basename
 from sklearn.preprocessing import StandardScaler
@@ -38,9 +37,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 X_train.shape
 
-
 # In[9]:
-
 
 from PIL import Image
 from sklearn import svm
@@ -54,8 +51,6 @@ image = np.array(image)
 img = image.flatten()
 
 clf = svm.SVC(kernel = 'linear', gamma=100, C=0.2)
-
-
 
 model = clf.fit (X_train, y_train )
 clf.score ([img], [["axes"]] )
