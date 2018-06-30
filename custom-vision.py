@@ -25,9 +25,7 @@ project = trainer.create_project("Custom Vision")
 hardshell_tag = trainer.create_tag(project.id, "hardshell jackets")
 insulated_tag = trainer.create_tag(project.id, "insulated jackets")
 
-
 # In[9]:
-
 
 #upload insulated hardshell jackets to custom vision
 import os
@@ -40,7 +38,6 @@ for image in os.listdir(os.fsencode(hardshell_dir)):
 
 # In[10]:
 
-
 #upload insulated jackets to custom vision
 import os
 insulated_dir = "/home/maysam.mokarian/notebooks/files/gear_images/insulated_jackets"
@@ -49,9 +46,7 @@ for image in os.listdir(os.fsencode(insulated_dir)):
    with open(insulated_dir + "/" + os.fsdecode(image), mode="rb") as img_data: 
        trainer.create_images_from_data(project.id, img_data, [ insulated_tag.id ])
 
-
 # In[11]:
-
 
 import time
 
@@ -66,9 +61,7 @@ while (iteration.status != "Completed"):
 trainer.update_iteration(project.id, iteration.id, is_default=True)
 print ("Done!")
 
-
 # In[12]:
-
 
 from azure.cognitiveservices.vision.customvision.prediction import prediction_endpoint
 from azure.cognitiveservices.vision.customvision.prediction.prediction_endpoint import models
