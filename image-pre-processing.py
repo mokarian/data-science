@@ -3,7 +3,6 @@
 
 # In[7]:
 
-
 import os
 from os.path import basename
 from PIL import Image
@@ -79,9 +78,7 @@ def main():
            normalize_and_resize(dirName + "/" + fname, os.path.splitext(fname)[0], savedir)
 main()
 
-
 # In[13]:
-
 
 import cv2
 import numpy as np
@@ -90,8 +87,6 @@ from matplotlib import pyplot as plt
 img0=cv2.imread('/home/maysam.mokarian/notebooks/files/gear_images/axes/100172.jpeg')
 img1=cv2.imread('/home/maysam.mokarian/notebooks/files/converted_images_resized/axes/100172.png')
 img2=cv2.imread('/home/maysam.mokarian/notebooks/files/converted_images_normalized/axes/100172.png')
-
-
 
 
 print(img0.size)
