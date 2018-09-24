@@ -1,8 +1,5 @@
 
 # coding: utf-8
-
-# In[5]:
-
 import os
 from os.path import basename
 from sklearn.preprocessing import StandardScaler
@@ -13,7 +10,7 @@ import numpy as np
 import os
 from os.path import basename
 
-rootDir = '/home/maysam.mokarian/notebooks/files/converted_images_normalized'
+rootDir = '/home/maysam/notebooks/challenges/files/converted_images_normalized'
 imageArray = []
 labelArray = []
 counter = 0
@@ -35,8 +32,7 @@ imageArray = np.array(imageArray)
 X_train, X_test, y_train, y_test = train_test_split(
     imageArray, labelArray, test_size=0.15, random_state=23)
 
-X_train.shape
-
+print(X_train.shape)
 # In[9]:
 
 from PIL import Image
@@ -45,14 +41,18 @@ import numpy as np
 
 
 
-image = Image.open("/home/maysam.mokarian/notebooks/files/converted_images_normalized/sample/screw.png")
+image = Image.open("/home/maysam/notebooks/challenges/files/test/test.png")
 
 image = np.array(image)
 img = image.flatten()
 
-clf = svm.SVC(kernel = 'linear', gamma=100, C=0.2)
 
-model = clf.fit (X_train, y_train )
-clf.score ([img], [["axes"]] )
-print(clf.score ([img], [["exes"]] ))
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import accuracy_score
+
+knn = KNeighborsClassifier(n_neighbors=4)
+knn.fit(X_train, y_train) 
+print("The gear image is in the category of:" + str(knn.predict([img])))
+y_pred= knn.predict(X_test)
+print("Accurary of the test data is:"+str(accuracy_score(y_pred,y_test))+"%")
 
