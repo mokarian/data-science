@@ -1,16 +1,16 @@
 
 # coding: utf-8
-rootDir = '/home/maysam/notebooks/challenges/files/images_reza'
-batch_size = 32
-num_classes =  int(12)
-epochs = 25
-input_shape = (128,128)
-
 import keras
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten
 from keras.layers import Conv2D, MaxPooling2D
 from keras import backend as K
+
+rootDir = '/home/maysam/notebooks/challenges/files/images_reza'
+batch_size = 32
+num_classes =  int(12)
+epochs = 25
+input_shape = (128,128)
 
 model = Sequential()
 model.add(Conv2D(32, (3, 3), input_shape = (128, 128, 3), activation = 'relu'))
