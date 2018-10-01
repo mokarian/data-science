@@ -58,8 +58,6 @@ def normalize_and_resize(filename, savefilename, savedir):
     makePathIfNotExist(savedir)
     new_im.save(savedir +"/"+ savefilename + ".png", "PNG")   
 
-
-
 def makePathIfNotExist(path):
     if not os.path.exists(path):
            os.makedirs(path)
@@ -77,8 +75,6 @@ def main():
            savedir = dirName.replace("gear_images", "converted_images")
            normalize_and_resize(dirName + "/" + fname, os.path.splitext(fname)[0], savedir)
 main()
-
-# In[13]:
 
 import cv2
 import numpy as np
