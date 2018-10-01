@@ -1,9 +1,6 @@
 
 # coding: utf-8
 
-# In[3]:
-
-
 from azure.cognitiveservices.vision.customvision.training import training_api
 from azure.cognitiveservices.vision.customvision.training.models import ImageUrlCreateEntry
 
@@ -16,10 +13,6 @@ trainer = training_api.TrainingApi(training_key)
 # Create a new project
 print ("Creating project...")
 project = trainer.create_project("Custom Vision")
-
-
-# In[4]:
-
 
 # Make two tags in the new project
 hardshell_tag = trainer.create_tag(project.id, "hardshell jackets")
@@ -35,9 +28,6 @@ for image in os.listdir(os.fsencode(hardshell_dir)):
    with open(hardshell_dir + "/" + os.fsdecode(image), mode="rb") as img_data: 
        trainer.create_images_from_data(project.id, img_data, [ hardshell_tag.id ])
 
-
-# In[10]:
-
 #upload insulated jackets to custom vision
 import os
 insulated_dir = "/home/maysam.mokarian/notebooks/files/gear_images/insulated_jackets"
@@ -45,8 +35,6 @@ insulated_dir = "/home/maysam.mokarian/notebooks/files/gear_images/insulated_jac
 for image in os.listdir(os.fsencode(insulated_dir)):
    with open(insulated_dir + "/" + os.fsdecode(image), mode="rb") as img_data: 
        trainer.create_images_from_data(project.id, img_data, [ insulated_tag.id ])
-
-# In[11]:
 
 import time
 
