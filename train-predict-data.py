@@ -5,7 +5,6 @@ from os.path import basename
 from sklearn.preprocessing import StandardScaler
 from PIL import Image
 from sklearn.model_selection import train_test_split
-
 import numpy as np
 import os
 from os.path import basename
