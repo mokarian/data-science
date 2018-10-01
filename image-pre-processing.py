@@ -1,8 +1,6 @@
 
 # coding: utf-8
 
-# In[7]:
-
 import os
 from os.path import basename
 from PIL import Image
