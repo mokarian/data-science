@@ -6,8 +6,8 @@ import numpy as np
 
 def main():
     map = readCharacterMappingInfo()
-    X_train, y_train = readCSVForXAndY(map, 'ds1Train.csv')
-    X_test, y_test = readCSVForXAndY(map, 'ds1Val.csv')
+    X_train, y_train = readCSVForXAndY(map, 'files/ds1Train.csv')
+    X_test, y_test = readCSVForXAndY(map, 'files/ds1Val.csv')
 
     trainNaiveBayes(X_test, X_train, y_test, y_train)
     trainKNN(X_test, X_train, y_test, y_train)
