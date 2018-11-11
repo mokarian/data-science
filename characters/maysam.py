@@ -3,7 +3,6 @@ from sklearn.metrics import accuracy_score
 import csv
 import numpy as np
 
-
 def main():
     map = readCharacterMappingInfo()
     X_train, y_train = readCSVForXAndY(map, 'ds1Train.csv')
@@ -13,7 +12,6 @@ def main():
     trainKNN(X_test, X_train, y_test, y_train)
     trainSVM(X_test, X_train, y_test, y_train)
     # trainLinearRegression(X_test, X_train, y_test, y_train)
-
 
 def readCharacterMappingInfo():
     map = {}
@@ -68,7 +66,6 @@ def trainLinearRegression(X_test, X_train, y_test, y_train):
     regr.fit(X_train, y_train)  # fit training data
     diabetes_y_pred = regr.predict(X_test)  # make prediction on X test set
     print("Accurary of the test data using Linear regression is:" + str(accuracy_score(diabetes_y_pred, y_test)) + "%")
-
 
 if __name__ == "__main__":
     main()
